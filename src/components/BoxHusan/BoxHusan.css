@@ -1,0 +1,92 @@
+:root {
+    --primary: #0ea5a4;
+    --primary-dark: #059e9d;
+    --bg: #f7f7f7;
+    --card-bg: #fff;
+    --text: #0f172a;
+    --text-muted: #555;
+}
+
+.boxhusan-wrap {
+    padding: 24px;
+    background: linear-gradient(135deg, #e0f7f7, #f7fafc);
+    font-family: Arial, sans-serif;
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+
+}
+
+.box {
+    position: relative;
+    background: var(--card-bg);
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 220px;
+    overflow: hidden;
+}
+
+.box.featured {
+    grid-column: span 2;
+    min-height: 320px;
+}
+
+.box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-dark);
+}
+
+.box img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.box h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.box p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    flex: 1;
+}
+
+.box button {
+    padding: 8px 14px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 720px) {
+    .box.featured {
+        grid-column: span 1;
+    }
+
+    .box img {
+        height: 180px;
+    }
+}
