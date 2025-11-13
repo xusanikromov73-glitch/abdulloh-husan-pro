@@ -1,6 +1,6 @@
 import React from 'react'
 import "./BoxHusan.css"
-import image from "/public/img2.png"
+import image from "/public/go.png"
 function BoxHusan() {
   return (
     <div>
